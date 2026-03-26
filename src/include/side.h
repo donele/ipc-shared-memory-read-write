@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+#include <ostream>
 #include <string>
 
 enum class Side : uint8_t {
@@ -13,7 +15,7 @@ inline const std::string ToString(Side side) {
     switch (side) {
         case Side::BID: return "BID"; break;
         case Side::ASK: return "ASK"; break;
-        default: return "UNKNWON";
+        default: return "UNKNOWN";
     }
 }
 
