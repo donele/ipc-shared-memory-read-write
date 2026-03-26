@@ -9,11 +9,11 @@ enum class Side : uint8_t {
     COUNT
 };
 
-//inline const char* ToString(Side side) {
 inline const std::string ToString(Side side) {
     switch (side) {
         case Side::BID: return "BID"; break;
         case Side::ASK: return "ASK"; break;
+        default: return "UNKNWON";
     }
 }
 
@@ -29,7 +29,6 @@ enum class PositionSide : uint8_t {
     UNKNOWN
 };
 
-//inline const char* ToString(PositionSide side) {
 inline const std::string ToString(PositionSide side) {
     switch (side) {
         case PositionSide::LONG: return "LONG";
