@@ -18,7 +18,6 @@ public:
         :Price(std::numeric_limits<int64_t>::max(), 1)
     {}
 
-    // don't return a reference to a packed field https://gcc.gnu.org/bugzilla/show_bug.cgi?id=36566
     int64_t IntValue() const { return value_; }
     double Increment() const { return increment_; }
     double ToDouble() const { return increment_ * static_cast<double>(value_); }
