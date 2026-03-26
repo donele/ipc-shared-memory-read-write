@@ -3,8 +3,8 @@
 ## How to build
 
 ```
-cmake -S . -B ./build
-cmake --build ./build
+cmake -S . -B build
+cmake --build build
 ```
 
 ## How to run
@@ -20,6 +20,12 @@ sudo ./build/bin/shm_manager
 
 ```
 ./build/bin/shm_test_producer
+```
+
+## Unit Test
+
+```
+./build/bin/unit_tests
 ```
 
 ## Benchmark
