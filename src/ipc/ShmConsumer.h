@@ -1,5 +1,6 @@
 #pragma once
 
+#include "macros.h"
 #include "spin_lock.h"
 #include "message_types.h"
 #include "ipc/ShmContext.h"
@@ -24,7 +25,7 @@ public:
     }
 
     ~ShmConsumer() = default;
-    //DISALLOW_COPY(ShmConsumer)
+    NO_COPY(ShmConsumer);
 
     inline BufferWrapper Consume() {
         auto out = context_.Consume(consumer_idx_);

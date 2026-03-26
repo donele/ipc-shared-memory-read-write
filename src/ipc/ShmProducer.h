@@ -1,5 +1,6 @@
 #pragma once
 
+#include "macros.h"
 #include "spin_lock.h"
 #include "ipc/ShmContext.h"
 
@@ -19,7 +20,7 @@ public:
         :context_(context)
     {}
 
-    //DISALLOW_COPY(ShmProducer)
+    NO_COPY(ShmProducer);
 
     template<typename T>
     int Produce(const T& obj) {
