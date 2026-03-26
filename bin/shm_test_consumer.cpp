@@ -4,12 +4,13 @@
 #include "ipc/ShmConsumer.h"
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
     cout << shm_name << '\n';
-    ShmContext context(shm_name);
+    ShmContext context{std::string(shm_name)};
     context.Attach();
 
     ShmConsumer consumer(context);

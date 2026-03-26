@@ -1,7 +1,6 @@
 #pragma once
 
-#include <string>
+#include <string_view>
 
-std::string shm_name = "/ipc_resource/shm/datashm";
-
+inline constexpr std::string_view shm_name = "/ipc_resource/shm/datashm";
 

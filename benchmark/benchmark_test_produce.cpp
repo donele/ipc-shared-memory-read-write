@@ -6,9 +6,10 @@
 #include "ipc/ShmProducer.h"
 
 #include <iostream>
+#include <string>
 
 static void bm_test_produce_1mm(benchmark::State& state) {
-    ShmContext context(shm_name);
+    ShmContext context(std::string(shm_name));
     context.Attach();
 
     ShmProducer prod(context);
@@ -27,7 +28,7 @@ static void bm_test_produce_1mm(benchmark::State& state) {
 BENCHMARK(bm_test_produce_1mm)->Iterations(1);
 
 static void bm_test_produce_1k(benchmark::State& state) {
-    ShmContext context(shm_name);
+    ShmContext context(std::string(shm_name));
     context.Attach();
 
     ShmProducer prod(context);
@@ -46,7 +47,7 @@ static void bm_test_produce_1k(benchmark::State& state) {
 BENCHMARK(bm_test_produce_1k)->Iterations(1);
 
 static void bm_test_produce_single(benchmark::State& state) {
-    ShmContext context(shm_name);
+    ShmContext context(std::string(shm_name));
     context.Attach();
 
     ShmProducer prod(context);

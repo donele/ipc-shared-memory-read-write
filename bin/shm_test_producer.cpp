@@ -11,7 +11,7 @@
 using namespace std;
 
 int main() {
-    ShmContext context(shm_name);
+    ShmContext context{std::string(shm_name)};
     context.Attach();
 
     ShmProducer prod(context);

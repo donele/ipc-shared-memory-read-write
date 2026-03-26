@@ -17,10 +17,10 @@ void SignalHandler(int signum) {
 }
 
 int main(int argc, char* argv[]) {
-    string name = shm_name;
+    string name(shm_name);
     cout << argc << endl;
     if(argc == 2) {
-        name = name + argv[1];
+        name += argv[1];
     }
     signal(SIGINT, SignalHandler);
     vector<ShmContext> shm_segments;
@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
     }
     shm_segments.emplace_back(name);
 
-    int size_mb = 1 * 1024;
+    int size_mb = 1 * 128;
     int64_t queue_size = size_mb * 1024UL * 1024UL;
     int num_consumers = 32;
     int obj_size_hint = 1024;

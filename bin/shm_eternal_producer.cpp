@@ -10,7 +10,7 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    string name = shm_name;
+    string name(shm_name);
     if(argc == 2) {
         name = name + argv[1];
     }
