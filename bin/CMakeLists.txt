@@ -1,0 +1,11 @@
+add_executable(shm_manager shm_manager.cpp)
+add_executable(shm_test_producer shm_test_producer.cpp)
+add_executable(shm_eternal_producer shm_eternal_producer.cpp)
+add_executable(shm_test_consumer shm_test_consumer.cpp)
+
+install(TARGETS shm_manager shm_test_producer shm_eternal_producer shm_test_consumer DESTINATION bin)
+
+target_link_libraries(shm_manager core)
+target_link_libraries(shm_test_producer core)
+target_link_libraries(shm_eternal_producer core)
+target_link_libraries(shm_test_consumer core)
