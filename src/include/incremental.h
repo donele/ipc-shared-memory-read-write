@@ -3,13 +3,10 @@
 #include "message_types.h"
 #include "price.h"
 #include "side.h"
-#include "types/time.h"
+#include "time_types.h"
 
 #include <cstdint>
 #include <ostream>
-
-// sizeof(Incremental) = 35 with __attribute__ packed
-// sizeof(Incremental) = 48 without packed
 
 struct Incremental {
     uint16_t type = msg_type::INCREMENTAL_L2;

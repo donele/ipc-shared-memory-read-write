@@ -2,6 +2,6 @@
 
 #include <string>
 
-std::string shm_name = "/node_data/shm/datashm";
+std::string shm_name = "/ipc_resource/shm/datashm";
 
 
